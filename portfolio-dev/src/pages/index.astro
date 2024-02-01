@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import IconLinkedIn from "../icons/IconLinkedIn.astro";
+import IconGithub from "../icons/IconGithub.astro";
+import SocialPill from "../components/SocialPill.astro";
+import IconMail from "../icons/IconMail.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import IconBriefcase from "../icons/IconBriefcase.astro";
+import IconProject from "../icons/IconProject.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout 
+	title="Portfolio de Ignaccio - Desarrollador y Programador Web."
+	description="Contrata a ignacio para crear tu aplicacion web o movil. Desarrollador especializado en crear aplicaciones unicas"
+>
+	<main>
+		<!--	INFORMACION PERSONAL	 -->
+		<SectionContainer class="pt-12 md:pt-24 pb-32">
+			<img
+				class="rounded-full size-16"
+				src="https://unavatar.io/github/ignaccio7"
+				alt="Foto de Ignaccio7"
+			/>
+			<h1
+				class="text-3xl md:text-5xl pb-6 pt-2 font-bold flex justify-start items-center gap-3"
+			>
+				Hola soy IgnaDev
+				<a
+					href="https://www.linkedin.com/in/nestor-ignacio-rojas-guarachi-998916267/?originalSubdomain=bo"
+					target="_blank"
+					rel="noopener"
+					class="flex"
+				>
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+			</h1>
+			<h2 class="text-[1.2rem]">
+				+0 años de experiencia.
+				<span class="text-yellow-200/80">
+					Desarrollador web y estudiante universitario.</span
+				>
+				De <span class="text-red-200/95"> La Paz, Bolivia.</span> Especializado en
+				aplicaciones web.
+			</h2>
+
+			<nav class="flex gap-4 mt-8">
+				<SocialPill href="https://www.linkedin.com/in/nestor-ignacio-rojas-guarachi-998916267/?originalSubdomain=bo">
+					<IconLinkedIn class="size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/ignaccio7">
+					<IconGithub class="size-6" />
+					Github
+				</SocialPill>
+				<SocialPill href="mailto:nirg@gmail.com">
+					<IconMail class="w-6 h-6"/>
+					nirg@gmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<!--	EXPERIENCIA PERSONAL	 -->
+		<SectionContainer id="experiencia" class="pb-24">
+			<h2 class="text-3xl font-semibold mb-4 flex gap-3 items-center">
+				<IconBriefcase class="size-8"/>
+				Experiencia Laboral
+			</h2>
+			<Experience/>
+		</SectionContainer>
+
+		<!--	PROYECTOS PERSONALES	 -->
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold mb-4 flex gap-3 items-center">
+				<IconProject class="size-8"/>
+				Proyectos
+			</h2>
+			<Projects/>
+		</SectionContainer>
+
+		<br><br><br><br><br><br><br><br><br><br>
+	</main>
+</Layout>
+
+<style></style>

@@ -1,0 +1,16 @@
+<a
+  {...Astro.props}
+  target="_blank"
+  rel="noopener noreferrer"
+  class=`flex gap-2 items-center justify-center
+    overflow-hidden
+    border border-white/30 rounded-full
+    py-2 px-4
+    transition
+    hover:scale-110 hover:bg-white/10
+    text-[12px]
+    cursor-pointer
+  `
+>
+  <slot />  
+</a>

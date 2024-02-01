@@ -1,0 +1,55 @@
+---
+import IconHTML from "../icons/IconHTML.astro"
+import IconCSS from "../icons/IconCSS.astro"
+import IconJavaScript from "../icons/IconJavaScript.astro"
+
+
+const TAGS = {
+  HTML:{
+    name:'HTML',
+    class:'bg-[#f06529] text-white',
+    icon:IconHTML
+  },
+  CSS:{
+    name:'CSS',
+    class:'bg-[#2965f1] text-white',
+    icon: IconCSS
+  },
+  JAVASCRIPT:{
+    name:'JavaScript',
+    class:'bg-[#f0db4f] text-[#323330]',
+    icon: IconJavaScript
+  },
+}
+
+const PROJECTS = [
+  {
+    title: 'Tienda de Inmuebles',
+    description: 'Ecomerce de una tienda de muebles plantilla realizada con mobile first casi sin nada de media queries',
+    link: 'https://ignaccio7.github.io/20ProyectosHTMLCSS/ecommerce/',
+    github: 'https://github.com/ignaccio7/20ProyectosHTMLCSS/tree/master/ecommerce',
+    image: './projects/tiendaInmuebles.webp',
+    tags: [TAGS.HTML,TAGS.CSS,TAGS.JAVASCRIPT]
+  }
+]
+
+---
+{  
+  PROJECTS.map(({ image, title, description, tags }) => (
+    <article>
+      <h3 class="text-2xl text-yellow-200 pb-4 font-bold">{title}</h3>
+      <p class="text-xl text-pretty pb-4">{description}</p>
+      <ul class="flex gap-4 pb-4">
+        {
+          tags.map(tag=>(
+            <span class={`flex gap-2 rounded-full text-xs items-center justify-center px-3 py-2 ${tag.class}`}>
+              <tag.icon class="size-5"/>  
+              {tag.name}
+            </span>
+          ))
+        }
+      </ul>
+      <img class="rounded shadow-xl shadow-white/30" src={image} alt={`Captura de pantalla del proyecto ${title}`}>
+    </article>
+  ))
+}

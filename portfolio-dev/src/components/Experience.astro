@@ -1,0 +1,38 @@
+---
+import type { Code, Debug } from "astro:components";
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "February 2022",
+    title: "Application UI code in Tailwind CSS",
+    description:
+      "Get access to over 20+pages including a dashboard layout,charts,kanbanboard,calendar,and pre-order E-commerce Marketing pages.",
+    link: "https://Vermas.com",
+  },
+  {
+    date: "March 2022",
+    title: "Marketing UI design in Figma",
+    description:
+      "All of the pages and components are first designed in Figma and we keep aparity between the two versions even as we update the project.",
+  },
+  {
+    date: "April 2022",
+    title: "E-Commerce UI code in Tailwind CSS",
+    description:
+      "Get started with dozens of web components and interactive elements builton top of Tailwind CSS.",
+  },
+];
+---
+
+<ol class="relative ml-3.5 pl-3 border-s border-gray-200 dark:border-slate-200">
+  {
+    EXPERIENCE.map((experience) => {
+      return (
+        <li class="mb-10 ms-4">
+          <ExperienceItem {...experience} />
+        </li>
+      );
+    })
+  }
+</ol>
